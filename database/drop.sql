@@ -1,3 +1,5 @@
 delete from customers;
 
-deleto from incomings;
+delete from incomings;
+
+drop table incomings;
