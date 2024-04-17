@@ -1,5 +1,6 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -12,7 +13,19 @@ public class Dataservice {
 
         Connection connection = DriverManager.getConnection(url, user, password);
 
-        String sql = "";
+        String sql = """
+                insert into customers(id,name,email)
+
+                values(?,?,?)
+
+                """;
+
+        for (Customer customer : customerList) {
+
+        }
+
+        PreparedStatement ps = connection.prepareStatement(sql); /// itt vannak egyesítve
+        ps.setInt(1, 0);
     }
 
     public void insertIncomings(ArrayList<Incoming> incomingList) {
