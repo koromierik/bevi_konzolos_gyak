@@ -19,7 +19,7 @@ public class DataService {
                 values(?,?,?)
 
                 """;
-
+    
         for (Customer customer : customerList) {
 
             PreparedStatement ps = connection.prepareStatement(sql); /// itt vannak egyesítve

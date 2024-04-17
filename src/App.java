@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println(args[0]);
+        System.out.println("filek adatbázisba");
         Filehandler filehandler = new Filehandler();
         DataService service = new DataService();
         // filehandler.readCostumers(args[0]);
@@ -15,5 +15,7 @@ public class App {
         // }
 
         service.insertCustomers(customerList);
+
+        service.insertIncomings(incomingList);
     }
 }
