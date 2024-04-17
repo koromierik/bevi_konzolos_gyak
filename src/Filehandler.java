@@ -29,6 +29,12 @@ public class Filehandler {
         while (scanner.hasNext()) {
             String line = scanner.nextLine();
             String[] lineArray = line.split(":");
+            Incoming incoming = new Incoming();
+            incoming.id = Integer.parseInt(lineArray[0]);
+            incoming.total = Double.parseDouble(lineArray[1]);
+            incoming.date = lineArray[2];
+            incoming.source = lineArray[3];
+            incoming.customerId = Integer.parseInt(lineArray[4]);
 
         }
     }
