@@ -19,7 +19,7 @@ public class DataService {
                 values(?,?,?)
 
                 """;
-    
+
         for (Customer customer : customerList) {
 
             PreparedStatement ps = connection.prepareStatement(sql); /// itt vannak egyesítve
@@ -33,7 +33,7 @@ public class DataService {
         connection.close();
     }
 
-    public void insertIncomings(ArrayList<Incoming> incomingList) {
+    public void insertIncomings(ArrayList<Incoming> incomingList) throws SQLException {
 
         String user = "bevi";
         String password = "titok";
@@ -62,5 +62,4 @@ public class DataService {
         }
         connection.close();
     }
-}
 }
