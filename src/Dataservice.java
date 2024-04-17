@@ -4,7 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class Dataservice {
+public class DataService {
     public void insertCustomers(ArrayList<Customer> customerList) throws SQLException {
 
         String user = "bevi";
@@ -23,11 +23,14 @@ public class Dataservice {
         for (Customer customer : customerList) {
 
             PreparedStatement ps = connection.prepareStatement(sql); /// itt vannak egyesítve
+
             ps.setInt(1, customer.id);
             ps.setString(2, customer.name);
             ps.setString(3, customer.email);
-        }
 
+            ps.executeUpdate();
+        }
+        connection.close();
     }
 
     public void insertIncomings(ArrayList<Incoming> incomingList) {
