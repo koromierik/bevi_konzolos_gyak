@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -22,7 +23,8 @@ public class Filehandler {
         return customerList;
     }
 
-    public void readIncomings(String filename) throws FileNotFoundException {
+    public ArrayList<Incoming> readIncomings(String filename) throws FileNotFoundException {
+        ArrayList<Incoming> incomingList = new ArrayList<>();
         File file = new File(filename);
         Scanner scanner = new Scanner(file);
         scanner.nextLine();
@@ -36,7 +38,9 @@ public class Filehandler {
             incoming.source = lineArray[3];
             incoming.customerId = Integer.parseInt(lineArray[4]);
 
-        }
-    }
+            incomingList.add(incoming);
 
+        }
+        return incomingList;
+    }
 }
